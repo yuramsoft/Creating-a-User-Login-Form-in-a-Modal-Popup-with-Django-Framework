@@ -1,0 +1,21 @@
+{% extends 'index.html' %} 
+
+<!--Title on the Browser Tab-->
+{% block title %} Portal {% endblock title %}
+
+<!--Button on navbar
+{% block nav-btn %}
+<a href="/logout" class="=btn btn-outline text-light border-light btn-sm" id="btn-nav">Logout</a>
+{% endblock nav-btn %}
+-->
+
+<!--Footer (optional - not necessary)-->
+{% block footer %}  style="color: #ff7f7f" {% endblock footer%}
+
+<!--Page Content-->
+{% block content %}
+<div>
+    <h2 style="position: absolute; top: 50%;   left: 50%; transform: translate(-50%, -50%); color:rgb(218, 16, 49)">Portal Page</h2>
+    </div>
+    <h2 style="position: absolute; top: 60%;   left: 50%; transform: translate(-50%, -50%); color:blue">Modal Popup User Login Form Using Django Framework</h2>
+{% endblock content %}

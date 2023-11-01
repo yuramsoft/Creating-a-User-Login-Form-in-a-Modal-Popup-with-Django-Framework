@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+<h2 style="position: absolute; top: 50%;   left: 50%; transform: translate(-50%, -50%); color:rgb(218, 16, 49)">Index Page</h2>
+</div>
+<h2 style="position: absolute; top: 60%;   left: 50%; transform: translate(-50%, -50%); color:blue">Modal Popup User Login Form Using Django Framework</h2>
+    
+<!--looping through messages-->
+{% for message in messages %}
+
+<!-- This are css and js files needed for displaying sweetalert messages -->
+<script src="/static/dist/sweetalert.js"></script>
+<link rel="stylesheet" href="/static/dist/sweetalert.css">
+<!--.......................-->
+
+<!--if message the tag is info as in view.py-->
+{% if message.tags == 'info' %}
+<!--Show the modal and proceed to the backend page that is portal
+<script>
+   var m = "{{ message }}";
+    swal("Blocked !", m, "info")
+</script>    -->
+<script>
+    $(document).ready(function(){
+        $("#popupModal").modal('show');
+         });
+</script>
+<!--If the message tag is error as in view.py, display message and denied access-->
+{% elif message.tags == 'error' %}
+<script>
+    var m = "{{ message }}";
+    swal("Denied !", m, "error")
+</script>
+
+{% endif %}
+
+{% endfor %}
+
+
+
+{% endblock %}
+
